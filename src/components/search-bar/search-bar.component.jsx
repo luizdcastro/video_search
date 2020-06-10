@@ -17,6 +17,9 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar ui segment">
+        <div className="logo-icon">
+          <i className="big play circle outline grey icon"></i>
+        </div>
         <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="search-bar--input ui fluid action input">
             <input
