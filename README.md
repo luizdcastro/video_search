@@ -1,1 +1,1 @@
-## Videos Searching
+## Video Search
