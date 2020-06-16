@@ -1,4 +1,4 @@
-# Online Clothing Store
+# Video Search
 
 On this web project you will find a SPA built with React JS to consume videos through YouTube API.
 
