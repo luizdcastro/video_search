@@ -12,16 +12,20 @@ class App extends React.Component {
   }
 
   onTermSubmit = async (term) => {
-    const response = await youtube.get("/search", {
-      params: {
-        q: term,
-      },
-    });
+    try {
+      const response = await youtube.get("/search", {
+        params: {
+          q: term,
+        },
+      });
 
-    this.setState({
-      videos: response.data.items,
-      selectedVideo: response.data.items[0],
-    });
+      this.setState({
+        videos: response.data.items,
+        selectedVideo: response.data.items[0],
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   onVideoSelect = (video) => {
@@ -34,7 +38,7 @@ class App extends React.Component {
         <SearchBar onFormSubmit={this.onTermSubmit} />
         <div className="app-container ui container stackable grid">
           <div className="ui row">
-            <div className="eleven wide column">
+            <div className="column eleven wide">
               <VideoDetail video={this.state.selectedVideo} />
             </div>
             <div className="five wide column">
